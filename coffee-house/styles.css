@@ -1,19 +1,32 @@
 :root {
     --text-color: #403F3D;
+    --text-light: #E1D4C9;
+    --text-italic: #B0907A;
     --body-color: #E1D4C9;
+    --border-dark: #665F55;
+    --border-light: #C1B6AD;
 }
 
 * {
     margin: 0;
     padding: 0;
-
+    box-sizing: border-box;
 }
 
-.text {
-    font-family: Inter;
+.nav-text {
+    font-family: 'Inter';
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
+    line-height: 150%;
+}
+
+.text {
+    color: var(--text-color);
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
     line-height: 150%;
 }
 
@@ -27,6 +40,7 @@ body {
 
 header {
     padding: 20px 40px;
+    margin-bottom: 40px;
 }
 
 .header-container {
@@ -76,5 +90,301 @@ header {
 }
 
 main {
+    width: 100%;
+    border: 1px solid black;
+    margin: auto;
+    background-color: var(--body-color);
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+#enjoy {
+    margin: 0 40px;
+    display: flex;
+    padding: 100px;
+    /*max-width: 1360px;*/
+    /*max-height: 644px;*/
+    border-radius: 40px;
+    background-image: url("images/enjoy-coffee.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/*.welcome-image {*/
+/*    max-width: 1360px;*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*    object-fit: cover;*/
+/*}*/
+
+.enjoy__container {
+    max-width: 530px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 40px;
+}
+
+.title {
+    font-family: 'Inter';
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 105%;
+    color: var(--text-light);
+}
+
+.italic {
+    font-style: italic;
+    color: var(--text-italic);
+}
+
+.light-text {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--text-light);
+}
+
+.enjoy__button {
+    border-radius: 100px;
+    border: 0;
+    display: flex;
+    width: 200px;
+    padding: 20px 78px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--body-color);
+}
+
+#favorite-coffee {
+    /*max-width: 1360px;*/
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.second-title {
+    font-family: 'Inter';
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.favorite-coffee__container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow {
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    border: 1px solid var(--border-dark);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.left {
+    background-image: url("images/arrow-left.svg");
+}
+
+.right {
+    background-image: url("images/arrow-right.svg");
+}
+
+.coffee {
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px
+}
+
+.coffee-image {
+    max-width: 480px;
+    max-height: 480px;
+}
+
+.coffee-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.coffee-name {
+    color: var(--text-color);
+    font-family: 'Inter';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+}
+
+.coffee-description {
+    text-align: center;
+}
+
+.coffee-price {
+    color: var(--text-color);
+    font-family: 'Inter';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+}
+
+.controls {
+    align-self: center;
+    display: flex;
+    gap: 12px;
+}
+
+.control {
+    width: 40px;
+    height: 4px;
+    background-color: var(--border-light);
+}
+
+.active-control {
+    background-color: var(--border-dark);
+}
+
+#about {
+    padding: 0 40px;
+}
+
+.image-collage {
+    display: grid;
+    grid-template-columns: repeat(2, 660px);
+    grid-gap: 40px;
+}
+
+.image-collage-left {
+    display: grid;
+    grid-template-rows: 590px 430px;
+    grid-gap: 40px;
+}
+
+.image-collage-right {
+    display: grid;
+    grid-template-rows: 430px 590px;
+    grid-gap: 40px;
+}
+
+.img-container {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.img-container.large {
+    height: 590px;
+}
+
+.img-container.small {
+    height: 430px;
+}
+
+.image-item {
+    width: 734px;
+    height: 734px;
+    object-fit: cover;
+    transition: transform 0.5s ease-out; /* Добавляем переход для плавного изменения размера */
+}
+
+.image-item:hover {
+    transform: scale(0.9); /* Уменьшаем размер изображения при наведении */
+}
+
+#mobile-app {
+    padding: 0 40px;
+}
+
+.mobile-app__container {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.app__container {
+    width: 630px;
+    height: 630px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+}
+
+.app__container > .second-title {
+    text-align: left;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.mobile-app__button {
+    display: flex;
+    width: 200px;
+    padding: 12px 20px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 100px;
+    border: 1px solid var(--border-dark);
+}
+
+.logo {
+    width: 36px;
+    height: 36px;
+}
+
+.text-area {
 
 }
+
+.small-btn-text {
+    color: var(--text-color);
+    font-family: 'Inter';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+}
+
+.big-btn-text {
+    color: var(--text-color);
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.mobibe-screens {
+    width: 100%;
+    height: 100%;
+}
+
