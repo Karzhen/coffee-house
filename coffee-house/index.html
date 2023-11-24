@@ -6,23 +6,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <title>Title</title>
+    <title>Coffee house by Egor Cherkashin</title>
 </head>
 <body>
 <header>
     <div class="header-container">
-        <img src="images/logo.png" alt="Coffee house" class="header-logo">
+        <a href="index.html"><img src="images/logo.png" alt="Coffee house" class="header-logo"></a>
         <nav class="header-nav">
             <ul class="nav__list">
-                <li class="nav__list-item"><a href="" class="nav-text">Favorite coffee</a></li>
-                <li class="nav__list-item"><a href="" class="nav-text">About</a></li>
-                <li class="nav__list-item"><a href="" class="nav-text">Mobile app</a></li>
-                <li class="nav__list-item"><a href="" class="nav-text">Contacts</a></li>
+                <li class="nav__list-item"><a href="#favorite-coffee" class="nav-text">Favorite coffee</a></li>
+                <li class="nav__list-item"><a href="#about" class="nav-text">About</a></li>
+                <li class="nav__list-item"><a href="#mobile-app" class="nav-text">Mobile app</a></li>
+                <li class="nav__list-item"><a href="#contacts" class="nav-text">Contacts</a></li>
             </ul>
         </nav>
         <div class="coffee-menu">
-            <p class="text">Menu</p>
-            <div class="cup"></div>
+            <a href="menu.html" class="coffee-menu">
+                <p class="text">Menu</p>
+                <div class="cup"></div>
+            </a>
         </div>
     </div>
 </header>
@@ -32,7 +34,7 @@
         <div class="enjoy__container">
             <h1 class="title"><span class="italic">Enjoy</span> premium coffee at our charming cafe</h1>
             <p class="light-text">With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.</p>
-            <button class="enjoy__button">Menu</button>
+            <a href="menu.html"><button class="enjoy__button">Menu</button></a>
         </div>
     </section>
     <section class="favorite-coffee" id="favorite-coffee">
@@ -106,37 +108,37 @@
             </div>
         </div>
     </section>
-    <section class="contacts" id="contacts">
-        <div class="contacts__container">
-            <h2 class="second-title"><span class="italic">Come visit us</span> just relax and enjoy cuppa coffee</h2>
-            <div class="contacts__buttons">
-                <div class="contacts__buttons-btn"><img src="images/twitter-logo.svg" alt=""></div>
-                <div class="contacts__buttons-btn"><img src="images/inst-logo.svg" alt=""></div>
-                <div class="contacts__buttons-btn"><img src="images/facebook-logo.svg" alt=""></div>
-            </div>
+</main>
+<footer id="contacts">
+    <div class="contacts__container">
+        <h2 class="second-title"><span class="italic">Come visit us</span> just relax and enjoy cuppa coffee</h2>
+        <div class="contacts__buttons">
+            <div class="contacts__buttons-btn"><img src="images/twitter-logo.svg" alt=""></div>
+            <div class="contacts__buttons-btn"><img src="images/inst-logo.svg" alt=""></div>
+            <div class="contacts__buttons-btn"><img src="images/facebook-logo.svg" alt=""></div>
         </div>
-        <div class="contacts__container">
-            <h3 class="third-title">Contacts</h3>
-            <div class="contacts__data">
-                <div class="contacts__data-row">
+    </div>
+    <div class="contacts__container">
+        <h3 class="third-title">Contacts</h3>
+        <div class="contacts__data">
+            <div class="contacts__data-row">
+                <a href="https://maps.app.goo.gl/FsGjUaxWCqXiYR1q7" class="contacts__data-row">
                     <div class="contact-logo"><img src="images/pin.svg" alt="placement"></div>
                     <p class="text contact-text">8558 Green Rd.,  LA</p>
-                </div>
-                <div class="contacts__data-row">
+                </a>
+            </div>
+            <div class="contacts__data-row">
+                <a href="tel:1(603)555-0123" class="contacts__data-row">
                     <div class="contact-logo"><img src="images/phone.svg" alt="phone number"></div>
                     <p class="text contact-text">+1 (603) 555-0123</p>
-                </div>
-                <div class="contacts__data-row">
-                    <div class="contact-logo"><img src="images/clock.svg" alt="schedule"></div>
-                    <p class="text contact-text">Mon-Sat: 9:00 AM – 23:00 PM</p>
-                </div>
-                </div>
+                </a>
+            </div>
+            <div class="contacts__data-row">
+                <div class="contact-logo"><img src="images/clock.svg" alt="schedule"></div>
+                <p class="text contact-text">Mon-Sat: 9:00 AM – 23:00 PM</p>
             </div>
         </div>
-    </section>
-</main>
-<footer>
-
+    </div>
 </footer>
 </body>
 </html>

@@ -1,0 +1,113 @@
+#menu-main {
+    gap: 40px;
+}
+
+.menu-title {
+    width: 800px;
+    margin: auto;
+}
+
+#menu-filter {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.menu-button {
+    display: flex;
+    padding: 8px 16px 8px 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 100px;
+    border: 1px solid var(--border-light);
+    user-select: none; /* УДАЛИТЬ ПРИ ДОБАВЛЕНИИ JS */
+}
+
+.menu-button:hover {
+    background-color: var(--border-dark);
+    transition: background-color 0.3s ease-in-out;
+}
+.menu-button:hover > .filter-logo {
+    background-color: var(--body-color);
+    transition: background-color 0.3s ease-in-out;
+}
+.menu-button:hover > .nav-text {
+    color: var(--body-color);
+    transition: color 0.3s ease-in-out;
+}
+
+.menu-active {
+    background: var(--border-dark);
+}
+
+.filter-logo {
+    display: flex;
+    padding: 3px 7px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    background-color: var(--border-light);
+}
+
+.menu-active > .filter-logo {
+    background-color: var(--body-color);
+}
+
+.menu-active > .nav-text {
+    color: var(--body-color);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 310px;
+    height: 506px;
+    border-radius: 40px;
+    border: 1px solid var(--border-light);
+    /*text-align: center;*/
+    cursor: pointer;
+}
+
+.item-box {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 310px;
+    height: 310px;
+    border-radius: 40px;
+}
+
+.item-image {
+    width: 345px;
+    height: 345px;
+    object-fit: cover;
+    transition: transform 0.5s ease-out; /* Добавляем переход для плавного изменения размера */
+}
+
+.item-image:hover {
+    transform: scale(0.9);
+}
+
+.item-name {
+    margin-bottom: 12px;
+}
+
+.item-text {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1 0 0;
+}
