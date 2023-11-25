@@ -23,6 +23,7 @@ a {
 
 a:hover, a:visited {
     text-decoration: none;
+    text-decoration: none;
 }
 
 .nav-text {
@@ -42,12 +43,21 @@ a:hover, a:visited {
     line-height: 150%;
 }
 
+.text-menu {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
 body {
     max-width: 1440px;
     width: 100%;
     margin: auto;
     background-color: var(--body-color);
     padding: 20px 40px 40px 40px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 400;
 }
 
 header {
@@ -74,6 +84,26 @@ header {
     gap: 40px;
 }
 
+.nav__list-item {
+    position: relative;
+}
+
+.nav__list-item::after {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #665F55;
+    content: "";
+    transition: width 0.3s ease-out;
+}
+
+.nav__list-item:hover::after {
+    width: 100%;
+}
+
 .nav__list-item > a {
     color: var(--text-color);
 }
@@ -82,18 +112,34 @@ header {
     color: var(--text-color);
 }
 
-.nav__list-item > a:hover {
-    text-decoration: underline; /* Добавить подчеркивание при наведении курсора */
-}
+/*.nav__list-item > a:hover {*/
+/*    text-decoration: underline; !* Добавить подчеркивание при наведении курсора *!*/
+/*}*/
 
-.coffee-menu {
+.menu-link {
     display: flex;
     flex-direction: row;
     gap: 8px;
 }
 
-.coffee-menu:hover {
+.coffee-menu {
+    position: relative;
+}
 
+.coffee-menu::after, .contacts__data-link::after {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--border-dark);
+    content: "";
+    transition: width 0.3s ease-out;
+}
+
+.coffee-menu:hover::after, .contacts__data-link:hover::after {
+    width: 100%;
 }
 
 .cup {
@@ -176,6 +222,21 @@ main {
     justify-content: center;
     align-items: center;
     background-color: var(--body-color);
+    cursor: pointer;
+}
+
+.enjoy__button-container {
+    display: flex;
+    gap: 5px;
+}
+
+.enjoy__button .cup {
+    width: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.enjoy__button:hover .cup {
+    width: 20px;
 }
 
 #favorite-coffee {
@@ -446,14 +507,20 @@ footer {
     border-radius: 40px;
 }
 
-.contacts__container {
-    width: 100%;
+.contacts__container-social {
+    width: 530px;
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-.contacts__container > .second-title {
+.contacts__container-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contacts__container-social > .second-title {
     color: var(--text-light);
     text-align: left;
 }
@@ -472,6 +539,16 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+.contacts__buttons-btn:hover {
+    background-color: var(--border-light);
+    transition: background-color 0.3s;
+}
+
+.contacts__buttons-btn:hover svg {
+    stroke: var(--border-dark);
 }
 
 .third-title {
@@ -487,6 +564,14 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+.contacts__data-link {
+    position: relative;
+}
+
+.contacts__data-link::after {
+    background-color: var(--border-light);
 }
 
 .contacts__data-row {

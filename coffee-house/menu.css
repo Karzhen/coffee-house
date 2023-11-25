@@ -1,3 +1,7 @@
+.menu-link {
+    user-select: none;
+}
+
 #menu-main {
     gap: 40px;
 }
@@ -26,18 +30,18 @@
     user-select: none; /* УДАЛИТЬ ПРИ ДОБАВЛЕНИИ JS */
 }
 
-.menu-button:hover {
-    background-color: var(--border-dark);
-    transition: background-color 0.3s ease-in-out;
-}
-.menu-button:hover > .filter-logo {
-    background-color: var(--body-color);
-    transition: background-color 0.3s ease-in-out;
-}
-.menu-button:hover > .nav-text {
-    color: var(--body-color);
-    transition: color 0.3s ease-in-out;
-}
+/*.menu-button:hover {*/
+/*    background-color: var(--border-dark);*/
+/*    transition: background-color 0.3s ease-in-out;*/
+/*}*/
+/*.menu-button:hover > .filter-logo {*/
+/*    background-color: var(--body-color);*/
+/*    transition: background-color 0.3s ease-in-out;*/
+/*}*/
+/*.menu-button:hover > .nav-text {*/
+/*    color: var(--body-color);*/
+/*    transition: color 0.3s ease-in-out;*/
+/*}*/
 
 .menu-active {
     background: var(--border-dark);
