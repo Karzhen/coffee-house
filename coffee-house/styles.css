@@ -33,7 +33,7 @@ body {
     background-color: var(--body-color);
     padding: 20px 40px 40px 40px;
     font-family: "Inter", sans-serif;
-    font-size: 1rem;
+    font-size: 1em;
     font-style: normal;
     color: var(--text-color);
     font-weight: 400;
@@ -238,6 +238,10 @@ main {
     display: flex;
     flex-direction: column;
     gap: 40px;
+}
+
+#favorite-coffee .second-title {
+    text-align: center;
 }
 
 .second-title {
@@ -469,18 +473,18 @@ main {
 
 .small-btn-text {
     color: var(--text-color);
-    font-family: 'Inter';
+    /*font-family: 'Inter';*/
     font-size: 10px;
-    font-style: normal;
+    /*font-style: normal;*/
     font-weight: 600;
     line-height: 140%;
 }
 
 .big-btn-text {
     color: var(--text-color);
-    font-family: 'Inter';
-    font-size: 16px;
-    font-style: normal;
+    /*font-family: 'Inter';*/
+    /*font-size: 16px;*/
+    /*font-style: normal;*/
     font-weight: 600;
     line-height: 150%;
 }
