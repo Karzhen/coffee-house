@@ -269,7 +269,7 @@ main {
     border: 1px solid var(--border-dark);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    /*background-size: cover;*/
 }
 
 .arrow:hover {
