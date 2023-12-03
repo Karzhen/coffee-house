@@ -29,7 +29,8 @@
 }
 
 .menu-title {
-    width: 800px;
+    max-width: 800px;
+    width: 100%;
     margin: auto;
 }
 
@@ -153,20 +154,13 @@
     bottom: 20px;
 }
 
-@media screen and (max-width: 900px) {
-    body {
-        max-width: 768px;
-    }
-
-    section {
-        max-width: 768px;
-    }
-
-    .image-collage > * {
-        grid-template-rows: 590px;
-    }
-
-    .img-container.small {
-        display: none;
-    }
+.menu__refresh {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border: 1px solid var(--border-dark);
+    margin: auto;
 }

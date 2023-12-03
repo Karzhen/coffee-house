@@ -583,12 +583,6 @@ footer {
     color: var(--text-light);
 }
 
-
-
-/*@media screen and (max-width: 768px) {*/
-
-/*}*/
-
 @media screen and (max-width: 1439px) {
     main {
         align-items: center;
@@ -639,7 +633,7 @@ footer {
 
 @media screen and (max-width: 900px) {
     body {
-        width: 768px;
+        max-width: 768px;
     }
 
     section {
@@ -651,6 +645,10 @@ footer {
     }
 
     .img-container.small {
+        display: none;
+    }
+
+    .menu-item:nth-child(n+5) {
         display: none;
     }
 }
