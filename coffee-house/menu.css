@@ -38,7 +38,7 @@
     margin: auto;
 }
 
-#menu-filter {
+.menu-filter {
     display: flex;
     flex-direction: row;
     gap: 16px;
