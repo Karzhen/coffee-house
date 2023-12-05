@@ -38,6 +38,19 @@ body > * {
     margin: auto;
 }
 
+body {
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
+    background-color: var(--body-color);
+    padding: 20px 40px 40px 40px;
+    font-family: "Inter", sans-serif;
+    font-size: 1em;
+    font-style: normal;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
 .nav-text {
     font-weight: 600;
     line-height: 150%;
