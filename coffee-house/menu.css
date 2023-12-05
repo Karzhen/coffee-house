@@ -28,6 +28,10 @@
     text-align: center;
 }
 
+#menu-main > h1 {
+    text-align: center;
+}
+
 .menu-title {
     max-width: 800px;
     width: 100%;
