@@ -6,10 +6,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/main/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/main/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/main/favicon-16x16.png">
-    <link rel="manifest" href="favicon/main/site.webmanifest">
+    <link rel="manifest" href="./favicon/main/site.webmanifest">
     <!--    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#665f55">-->
     <!--    <meta name="msapplication-TileColor" content="#e1d4c9">-->
     <!--    <meta name="theme-color" content="#ffffff">-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +24,12 @@
 <header>
     <div class="header-container">
         <a href="index.html"><img src="images/logo.png" alt="Coffee house" class="header-logo"></a>
-        <nav class="header-nav">
+<!--        <div class="header__burger">-->
+        <div class="burger-icon">
+            <div class="icon-line"></div>
+            <div class="icon-line"></div>
+        </div>
+        <nav class="burger-nav">
             <ul class="nav__list">
                 <li class="nav__list-item"><a href="#favorite-coffee" class="nav-text">Favorite coffee</a></li>
                 <li class="nav__list-item"><a href="#about" class="nav-text">About</a></li>
@@ -30,6 +37,7 @@
                 <li class="nav__list-item"><a href="#contacts" class="nav-text">Contact us</a></li>
             </ul>
         </nav>
+<!--        </div>-->
         <div class="coffee-menu">
             <a href="menu.html" class="menu-link">
                 <p class="text-menu">Menu</p>
@@ -120,14 +128,14 @@
                 </div>
             </div>
             <div class="app__container">
-                <img src="images/mobile-screens.png" alt="download us" class="mobibe-screens">
+                <img src="images/mobile-screens.png" alt="download us" class="mobile-screens">
             </div>
         </div>
     </section>
 </main>
 <footer id="contacts">
     <div class="contacts__container-social">
-        <h2 class="second-title">Sip, Savor, Smile.<span class="italic"><br>It’s coffee time!</span></h2>
+        <h2 class="second-title">Sip, Savor, Smile.<span class="italic"> It’s coffee time!</span></h2>
         <div class="contacts__buttons">
             <div class="contacts__buttons-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="#E1D4C9" fill="none">
