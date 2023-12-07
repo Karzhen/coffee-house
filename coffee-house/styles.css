@@ -190,6 +190,7 @@ main > * {
 section {
     width: 100%;
     margin: auto;
+    transition: width 0.5s;
 }
 
 #enjoy {
@@ -658,6 +659,10 @@ footer {
         max-width: 768px;
     }
 
+    .enjoy__button-container .cup {
+        width: 20px;
+    }
+
     .image-collage > * {
         grid-template-rows: 590px;
     }
@@ -696,7 +701,7 @@ footer {
 
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 640px) {
     body {
         padding-left: 16px;
         padding-right: 16px;
@@ -708,10 +713,6 @@ footer {
 
     #enjoy {
         padding: 60px 16px;
-    }
-
-    .enjoy__button-container .cup {
-        width: 20px;
     }
 
     .second-title {
