@@ -57,19 +57,6 @@
     user-select: none; /* УДАЛИТЬ ПРИ ДОБАВЛЕНИИ JS */
 }
 
-.menu-button:hover {
-    background-color: var(--border-dark);
-    transition: background-color 0.3s ease-in-out;
-}
-.menu-button:hover > .filter-logo {
-    background-color: var(--body-color);
-    transition: background-color 0.3s ease-in-out;
-}
-.menu-button:hover > .nav-text {
-    color: var(--body-color);
-    transition: color 0.3s ease-in-out;
-}
-
 .menu-active {
     background: var(--border-dark);
 }
@@ -134,10 +121,6 @@
     transition: transform 0.5s ease-out; /* Добавляем переход для плавного изменения размера */
 }
 
-.menu-item:hover .item-image {
-    transform: scale(0.9);
-}
-
 .item-name {
     margin-bottom: 12px;
 }
@@ -167,4 +150,23 @@
     border-radius: 100px;
     border: 1px solid var(--border-dark);
     margin: auto;
+}
+
+@media (hover: hover) {
+    .menu-button:hover {
+        background-color: var(--border-dark);
+        transition: background-color 0.3s ease-in-out;
+    }
+    .menu-button:hover > .filter-logo {
+        background-color: var(--body-color);
+        transition: background-color 0.3s ease-in-out;
+    }
+    .menu-button:hover > .nav-text {
+        color: var(--body-color);
+        transition: color 0.3s ease-in-out;
+    }
+
+    .menu-item:hover .item-image {
+        transform: scale(0.9);
+    }
 }
