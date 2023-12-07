@@ -410,6 +410,7 @@ section {
     width: 734px;
     height: 734px;
     object-fit: cover;
+    background-size: auto;
     transition: transform 0.5s ease-out; /* Добавляем переход для плавного изменения размера */
 }
 
@@ -581,14 +582,14 @@ footer {
     }
 
     .image-collage {
-        grid-template-columns: 688px;
+        grid-template-columns: 660px;
         margin: auto;
     }
 
-    .image-item {
-        width: 765px;
-        height: 765px;
-    }
+    /*.image-item {*/
+    /*    width: 765px;*/
+    /*    height: 765px;*/
+    /*}*/
 }
 
 @media screen and (max-width: 1050px) {
@@ -618,7 +619,7 @@ footer {
     /*}*/
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
     body {
         max-width: 768px;
     }
@@ -673,6 +674,10 @@ footer {
 
     .menu-item:nth-child(n+5) {
         display: none;
+    }
+
+    #menu__refresh {
+        display: flex;
     }
 }
 
