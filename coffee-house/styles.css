@@ -592,6 +592,17 @@ footer {
     /*}*/
 }
 
+
+@media screen and (max-width: 1089px) {
+    .menu-item:nth-child(n+5) {
+        display: none;
+    }
+
+    #menu__refresh {
+        display: flex;
+    }
+}
+
 @media screen and (max-width: 1050px) {
     .mobile-app__container {
         flex-direction: column;
@@ -670,14 +681,6 @@ footer {
 
     .img-container.small {
         display: none;
-    }
-
-    .menu-item:nth-child(n+5) {
-        display: none;
-    }
-
-    #menu__refresh {
-        display: flex;
     }
 }
 
