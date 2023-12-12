@@ -93,18 +93,38 @@ header {
 }
 
 .burger-icon {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-
+    width: 44px;
+    height: 44px;
+    z-index: 11;
+    cursor: pointer;
+    border-radius: 100px;
+    border: 1px solid var(--border-dark);
+    justify-content: space-around;
     display: none;
 }
 
+.menu__container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .icon-line {
+    position: relative;
     width: 16px;
-    height: 0;
-    border: 1px solid var(--text-color);
+    height: 1px;
+    background-color: var(--text-color);
+}
+
+.line-top {
+    left: 25%;
+    top: 35%;
+    transition: top 0.1s ease;
+}
+
+.line-bottom {
+    right: 25%;
+    top: 55%;
+    transition: top 0.1s ease;
 }
 
 .nav__list {
@@ -194,27 +214,32 @@ section {
 }
 
 #enjoy {
-    /*margin: 0 40px;*/
     display: flex;
     padding: 100px;
     width: 100%;
     /*max-width: 1360px;*/
     /*max-height: 644px;*/
     border-radius: 40px;
-    background-image: url("images/enjoy-coffee.jpeg");
-    background-repeat: no-repeat;
+    /*background-image: url("images/enjoy-coffee.jpeg");*/
+    /*background-repeat: no-repeat;*/
     background-position: center;
     background-size: cover;
+    position: relative;
+    overflow: hidden;
 }
 
-/*.welcome-image {*/
-/*    max-width: 1360px;*/
-/*    width: 100%;*/
-/*    height: auto;*/
-/*    object-fit: cover;*/
-/*}*/
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 .enjoy__container {
+    position: relative;
+    z-index: 1;
     max-width: 530px;
     display: flex;
     flex-direction: column;
@@ -290,8 +315,9 @@ section {
     display: flex;
     flex-direction: row;
     gap: 40px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .arrow {
@@ -307,20 +333,41 @@ section {
 }
 
 .left {
+    position: absolute;
+    left: 0;
     background-image: url("images/arrow-left.svg");
 }
 
 .right {
+    position: absolute;
+    right: 0;
     background-image: url("images/arrow-right.svg");
 }
 
-.coffee {
+.container__coffee {
     width: 480px;
+    overflow-x: hidden;
+}
+
+.coffee__slider {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 100px;
+    position: relative;
+    left: 0;
+    transition: .5s;
+}
+
+.slider-item {
+    width: 480px;
+    justify-self: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px
+    gap: 20px;
+    user-select: none;
 }
 
 .coffee-image {
@@ -641,30 +688,68 @@ footer {
 
     .burger-icon {
         display: flex;
-        width: 44px;
-        height: 44px;
-        z-index: 5;
-        cursor: pointer;
-        border-radius: 100px;
-        border: 1px solid var(--border-dark);
+    }
+
+    .burger-icon-close .line-bottom {
+        top: 50%;
+        transform: rotate(-45deg);
+    }
+
+    .burger-icon-close .line-top {
+        top: 50%;
+        transform: rotate(45deg);
     }
 
     .burger-nav {
-        display: none;
+        background-color: var(--body-color);
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        padding-top: 100px;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 125%;
+        left: 100%;
+        z-index: 10;
+        transition: left 0.5s ease-in-out;
+
+        /*padding: 60px 40px;*/
+        /*margin-bottom: 100px;*/
+        /*display: none;*/
+    }
+
+    .burger-nav-open {
+        left: 0;
     }
 
     .nav__list {
-        /*flex-direction: column;*/
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+        padding: 60px 40px;
         /*position: absolute;*/
         /*width: 100%;*/
         /*right: -150%;*/
     }
 
     .coffee-menu {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 125%;
+        position: fixed;
+        z-index: 10;
+        top: 600px;
+        right: -100%;
+        transition: right 0.5s ease-in-out;
         /*position: absolute;*/
         /*width: 100%;*/
         /*right: -150%;*/
-        display: none;
+        /*display: none;*/
+    }
+
+    .coffee-menu-open {
+        right: 310px;
     }
 
     section {
@@ -685,6 +770,10 @@ footer {
 }
 
 @media screen and (max-width: 767px) {
+    .container__coffee {
+        width: 348px;
+    }
+
     .coffee-image {
         max-width: 348px;
         max-height: 348px;

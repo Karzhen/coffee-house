@@ -2,9 +2,9 @@
     user-select: none;
 }
 
-.coffee-menu {
-    position: relative;
-}
+/*.coffee-menu {*/
+/*    position: relative;*/
+/*}*/
 
 .coffee-menu::after {
     display: block;

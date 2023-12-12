@@ -1,3 +1,30 @@
+// const menuItems = document.querySelectorAll('.menu-item');
+let counter = 0;
+let hiddenItems = [];
+
+function checkHiddenItemsAndUpdateButton() {
+    counter = 0;
+    hiddenItems = [];
+
+    const menuCard = document.querySelectorAll('.menu-item'),
+        refreshBtn = document.querySelector('.menu__refresh');
+
+    menuCard.forEach(menuItem => {
+        const style = window.getComputedStyle(menuItem);
+        if (style.display === 'flex') {
+            counter += 1;
+        } else {
+            hiddenItems.push(menuItem);
+        }
+    });
+
+    if (hiddenItems.length > 0) {
+        refreshBtn.style.display = 'flex';
+    } else {
+        refreshBtn.style.display = 'none';
+    }
+}
+
 function displayMenu(category) {
     const itemsContainer = document.getElementById('menu-items');
     itemsContainer.innerHTML = ''; // Очищаем предыдущие элементы
@@ -22,7 +49,7 @@ function displayMenu(category) {
                     menuItem.classList.add('menu-item');
                     menuItem.innerHTML = `
                       <div class="item-box">
-                          <img src="./images/${category}/${product.name}.jpeg" alt="${product.name}" class="item-image">
+                          <img src="./images/${category}/${product.name}.jpeg" alt="${product.name}" class="item-image" draggable="false">
                       </div>
                       <div class="item-text">
                           <h3 class="item-name">${product.name}</h3>
@@ -40,12 +67,30 @@ function displayMenu(category) {
             } else {
                 alert('Товары в категории ${category} не найдены');
             }
+            checkHiddenItemsAndUpdateButton();
         });
 }
 
+function refreshMenu() {
+    if (hiddenItems) {
+        hiddenItems.slice(0, 2).forEach(hiddenItem => {
+            hiddenItem.style.display = 'flex';
+            counter += 1;
+        });
+        hiddenItems = hiddenItems.slice(2);
+    }
+
+    if (hiddenItems.length === 0) {
+        document.querySelector('.menu__refresh').style.display = 'none';
+    }
+}
+
 window.onload = function () { displayMenu('coffee') };
+window.addEventListener('resize', checkHiddenItemsAndUpdateButton);
 
 document.getElementById('button-coffee').addEventListener('click', () => displayMenu('coffee'));
 document.getElementById('button-tea').addEventListener('click', () => displayMenu('tea'));
 document.getElementById('button-dessert').addEventListener('click', () => displayMenu('dessert'));
+
+document.getElementById('menu__refresh').addEventListener('click', () => refreshMenu());
 

@@ -22,11 +22,10 @@
 <body>
 <header>
   <div class="header-container">
-    <a href="index.html"><img src="images/logo.png" alt="Coffee house" class="header-logo"></a>
-    <!--        <div class="header__burger">-->
+    <a href="index.html"><img src="images/logo.png" alt="Coffee house" class="header-logo" draggable="false"></a>
     <div class="burger-icon">
-      <div class="icon-line"></div>
-      <div class="icon-line"></div>
+      <div class="icon-line line-top"></div>
+      <div class="icon-line line-bottom"></div>
     </div>
     <nav class="burger-nav">
       <ul class="nav__list">
@@ -36,7 +35,6 @@
         <li class="nav__list-item"><a href="#contacts" class="nav-text">Contact us</a></li>
       </ul>
     </nav>
-    <!--        </div>-->s
     <div class="coffee-menu">
       <a href="menu.html" class="menu-link">
         <p class="text-menu">Menu</p>
@@ -65,7 +63,7 @@
     <div id="menu-items" class="menu-flex">
       <div class="menu-item">
         <div class="item-box">
-          <img src="images/coffee/Irish%20coffee.jpeg" alt="Irish coffee" class="item-image">
+          <img src="images/coffee/Irish%20coffee.jpeg" alt="Irish coffee" class="item-image" draggable="false">
         </div>
         <div class="item-text">
           <h3 class="item-name">Irish coffee</h3>
@@ -76,7 +74,7 @@
 
       <div class="menu-item">
         <div class="item-box">
-          <img src="images/coffee/Kahlua%20coffee.jpeg" alt="Kahlua coffee" class="item-image">
+          <img src="images/coffee/Kahlua%20coffee.jpeg" alt="Kahlua coffee" class="item-image" draggable="false">
         </div>
         <div class="item-text">
           <h3 class="item-name coffee-name">Kahlua coffee</h3>
@@ -87,7 +85,7 @@
 
       <div class="menu-item">
         <div class="item-box">
-          <img src="images/coffee/Honey%20raf.jpeg" alt="Honey raf" class="item-image">
+          <img src="images/coffee/Honey%20raf.jpeg" alt="Honey raf" class="item-image" draggable="false">
         </div>
         <div class="item-text">
           <h3 class="item-name">Honey raf</h3>
@@ -98,7 +96,7 @@
 
       <div class="menu-item">
         <div class="item-box">
-          <img src="images/coffee/Ice%20cappuccino.jpeg" alt="Ice cappuccino" class="item-image">
+          <img src="images/coffee/Ice%20cappuccino.jpeg" alt="Ice cappuccino" class="item-image" draggable="false">
         </div>
         <div class="item-text">
           <h3 class="item-name">Ice cappuccino</h3>
@@ -108,7 +106,7 @@
       </div>
       <div class="menu-item">
         <div class="item-box">
-          <img src="images/coffee/Espresso.jpeg" alt="Espresso" class="item-image">
+          <img src="images/coffee/Espresso.jpeg" alt="Espresso" class="item-image" draggable="false">
         </div>
         <div class="item-text">
           <h3 class="item-name">Espresso</h3>
@@ -118,7 +116,7 @@
       </div>
       <div class="menu-item">
         <div class="item-box">
-          <img src="images/coffee/Latte.jpeg" alt="Latte" class="item-image">
+          <img src="images/coffee/Latte.jpeg" alt="Latte" class="item-image" draggable="false">
         </div>
         <div class="item-text">
           <h3 class="item-name">Latte</h3>
@@ -128,7 +126,7 @@
       </div>
       <div class="menu-item">
         <div class="item-box">
-          <img src="images/coffee/Latte%20macchiato.jpeg" alt="Latte macchiato" class="item-image">
+          <img src="images/coffee/Latte%20macchiato.jpeg" alt="Latte macchiato" class="item-image" draggable="false">
         </div>
         <div class="item-text">
           <h3 class="item-name">Latte macchiato</h3>
@@ -138,7 +136,7 @@
       </div>
       <div class="menu-item">
         <div class="item-box">
-          <img src="images/coffee/Coffee%20with%20cognac.jpeg" alt="Coffee with cognac" class="item-image">
+          <img src="images/coffee/Coffee%20with%20cognac.jpeg" alt="Coffee with cognac" class="item-image" draggable="false">
         </div>
         <div class="item-text">
           <h3 class="item-name">Coffee with cognac</h3>
@@ -148,7 +146,7 @@
       </div>
     </div>
     <div class="menu__refresh" id="menu__refresh">
-      <img src="./images/refresh.svg" alt="&#8635;">
+      <img src="./images/refresh.svg" alt="&#8635;" draggable="false">
     </div>
   </section>
   <div id="modal-card">
@@ -183,23 +181,24 @@
     <div class="contacts__data">
       <a href="https://maps.app.goo.gl/FsGjUaxWCqXiYR1q7" target="blank" class="contacts__data-link">
         <div class="contacts__data-row">
-          <div class="contact-logo"><img src="images/pin.svg" alt="placement"></div>
+          <div class="contact-logo"><img src="images/pin.svg" alt="placement" draggable="false"></div>
           <span class="text contact-text">8558 Green Rd.,  LA</span>
         </div>
       </a>
       <a href="tel:1(603)555-0123" class="contacts__data-link">
         <div class="contacts__data-row">
-          <div class="contact-logo"><img src="images/phone.svg" alt="phone number"></div>
+          <div class="contact-logo"><img src="images/phone.svg" alt="phone number" draggable="false"></div>
           <span class="text contact-text">+1 (603) 555-0123</span>
         </div>
       </a>
       <div class="contacts__data-row">
-        <div class="contact-logo"><img src="images/clock.svg" alt="schedule"></div>
+        <div class="contact-logo"><img src="images/clock.svg" alt="schedule" draggable="false"></div>
         <span class="text contact-text">Mon-Sat: 9:00 AM – 23:00 PM</span>
       </div>
     </div>
   </div>
 </footer>
+<script src="burger.js"></script>
 <script src="menu.js"></script>
 <script src="modal.js"></script>
 </body>

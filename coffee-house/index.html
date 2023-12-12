@@ -23,11 +23,10 @@
 <body>
 <header>
     <div class="header-container">
-        <a href="index.html"><img src="images/logo.png" alt="Coffee house" class="header-logo"></a>
-<!--        <div class="header__burger">-->
+        <a href="index.html"><img src="images/logo.png" alt="Coffee house" class="header-logo" draggable="false"></a>
         <div class="burger-icon">
-            <div class="icon-line"></div>
-            <div class="icon-line"></div>
+            <div class="icon-line line-top"></div>
+            <div class="icon-line line-bottom"></div>
         </div>
         <nav class="burger-nav">
             <ul class="nav__list">
@@ -37,7 +36,6 @@
                 <li class="nav__list-item"><a href="#contacts" class="nav-text">Contact us</a></li>
             </ul>
         </nav>
-<!--        </div>-->
         <div class="coffee-menu">
             <a href="menu.html" class="menu-link">
                 <p class="text-menu">Menu</p>
@@ -48,6 +46,9 @@
 </header>
 <main>
     <section class="enjoy" id="enjoy">
+        <video class="video-background" autoplay muted loop>
+            <source src="video/video%20(1440p).mp4" type="video/mp4">
+        </video>
         <!--        <img src="images/enjoy-coffee.jpeg" alt="Welcome image" class="welcome-image">-->
         <div class="enjoy__container">
             <h1 class="title"><span class="italic">Enjoy</span> premium coffee at our charming cafe</h1>
@@ -64,12 +65,32 @@
         <h2 class="second-title">Choose your <span class="italic">favorite</span> coffee</h2>
         <div class="favorite-coffee__container">
             <div class="arrow left"></div>
-            <div class="coffee">
-                <img src="images/coffee-slide-1.png" alt="Frapuccino" class="coffee-image">
-                <div class="coffee-text">
-                    <h3 class="item-name">S’mores Frappuccino</h3>
-                    <p class="coffee-description text">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
-                    <p class="item-price">$5.50</p>
+            <div class="container__coffee">
+                <div class="coffee__slider">
+                    <div class="slider-item item-1">
+                        <img src="images/coffee-slide-1.png" alt="Frapuccino" class="coffee-image" draggable="false">
+                        <div class="coffee-text">
+                            <h3 class="item-name">S’mores Frappuccino</h3>
+                            <p class="coffee-description text">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
+                            <p class="item-price">$5.50</p>
+                        </div>
+                    </div>
+                    <div class="slider-item item-2">
+                        <img src="images/coffee-slide-2.png" alt="Caramel Macchiato" class="coffee-image" draggable="false">
+                        <div class="coffee-text">
+                            <h3 class="item-name">Caramel Macchiato</h3>
+                            <p class="coffee-description text">Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.</p>
+                            <p class="item-price">$5.00</p>
+                        </div>
+                    </div>
+                    <div class="slider-item item-3">
+                        <img src="images/coffee-slide-3.png" alt="Ice coffee" class="coffee-image" draggable="false">
+                        <div class="coffee-text">
+                            <h3 class="item-name">Ice coffee</h3>
+                            <p class="coffee-description text">A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.</p>
+                            <p class="item-price">$4.50</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="arrow right"></div>
@@ -87,18 +108,18 @@
         <div class="image-collage">
             <div class="image-collage-left">
                 <div class="img-container large">
-                    <img class="image-item" src='images/image-1.jpeg' alt=''>
+                    <img class="image-item" src='images/image-1.jpeg' alt='' draggable="false">
                 </div>
                 <div class="img-container small">
-                    <img class="image-item" src='images/image-2.jpeg' alt=''>
+                    <img class="image-item" src='images/image-2.jpeg' alt='' draggable="false">
                 </div>
             </div>
             <div class="image-collage-right">
                 <div class="img-container small">
-                    <img class="image-item" src='images/image-3.jpeg' alt=''>
+                    <img class="image-item" src='images/image-3.jpeg' alt='' draggable="false">
                 </div>
                 <div class="img-container large">
-                    <img class="image-item" src='images/image-4.jpeg' alt=''>
+                    <img class="image-item" src='images/image-4.jpeg' alt='' draggable="false">
                 </div>
             </div>
         </div>
@@ -128,7 +149,7 @@
                 </div>
             </div>
             <div class="app__container">
-                <img src="images/mobile-screens.png" alt="download us" class="mobile-screens">
+                <img src="images/mobile-screens.png" alt="download us" class="mobile-screens" draggable="false">
             </div>
         </div>
     </section>
@@ -161,22 +182,24 @@
         <div class="contacts__data">
             <a href="https://maps.app.goo.gl/FsGjUaxWCqXiYR1q7" target="blank" class="contacts__data-link">
                 <div class="contacts__data-row">
-                    <div class="contact-logo"><img src="images/pin.svg" alt="placement"></div>
+                    <div class="contact-logo"><img src="images/pin.svg" alt="placement" draggable="false"></div>
                     <span class="text contact-text">8558 Green Rd.,  LA</span>
                 </div>
             </a>
             <a href="tel:1(603)555-0123" class="contacts__data-link">
                 <div class="contacts__data-row">
-                    <div class="contact-logo"><img src="images/phone.svg" alt="phone number"></div>
+                    <div class="contact-logo"><img src="images/phone.svg" alt="phone number" draggable="false"></div>
                     <span class="text contact-text">+1 (603) 555-0123</span>
                 </div>
             </a>
             <div class="contacts__data-row">
-                <div class="contact-logo"><img src="images/clock.svg" alt="schedule"></div>
+                <div class="contact-logo"><img src="images/clock.svg" alt="schedule" draggable="false"></div>
                 <span class="text contact-text">Mon-Sat: 9:00 AM – 23:00 PM</span>
             </div>
         </div>
     </div>
 </footer>
+<script src="burger.js"></script>
+<script src="slider.js"></script>
 </body>
 </html>
