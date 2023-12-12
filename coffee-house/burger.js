@@ -18,6 +18,14 @@ function closeBurgerMenu() {
     burgerBtn.classList.remove('burger-icon-close');
 }
 
+document.querySelectorAll('.nav__list-item').forEach((elem) => {
+    elem.addEventListener('click', () => {
+        if (burgerNav.classList.contains('burger-nav-open')) {
+            closeBurgerMenu();
+        }
+    })
+})
+
 window.addEventListener('load', () => {
     if (window.innerWidth >= 768) {
         closeBurgerMenu();

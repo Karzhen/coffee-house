@@ -108,6 +108,7 @@
 
 .filter-active {
     background: var(--border-dark);
+    border: 0;
 }
 
 .filter-symbol {
