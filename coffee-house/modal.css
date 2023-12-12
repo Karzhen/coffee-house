@@ -171,6 +171,7 @@
     border-radius: 100px;
     border: 1px solid var(--border-dark);
     transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .close__button-text {
@@ -187,7 +188,7 @@
     }
 }
 
-@media screen and (max-width: 380px){
+@media screen and (max-width: 640px){
     .container-left {
         width: 0;
         height: 0;
