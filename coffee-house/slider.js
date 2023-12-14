@@ -18,9 +18,12 @@ let isMouseDragging = false,
     startXMouse,
     currentXMouse;
 
-// coffeeSlider.addEventListener('mouseover', () => pauseProgressBar(true));
-//
-// coffeeSlider.addEventListener('mouseout', () => pauseProgressBar(false));
+document.querySelectorAll('.coffee-image').forEach((image) => {
+    image.addEventListener('mouseover', () => pauseProgressBar(true));
+})
+document.querySelectorAll('.coffee-image').forEach((image) => {
+    image.addEventListener('mouseout', () => pauseProgressBar(false));
+})
 
 function pauseProgressBar(isPause = true){
     const currentControl = document.querySelector('.control__load');
@@ -115,17 +118,9 @@ function endDrag(){
 }
 
 // Добавляем обработчики событий сенсорных устройств
-container.addEventListener('touchstart', () => {
-    pauseProgressBar(true);
-    startDrag();
-});
-container.addEventListener('touchmove',  () => {
-    moveDrag();
-});
-container.addEventListener('touchend',  () => {
-    pauseProgressBar(false);
-    endDrag();
-});
+container.addEventListener('touchstart', startDrag);
+container.addEventListener('touchmove', moveDrag);
+container.addEventListener('touchend', endDrag);
 
 function startMouseDrag(event) {
     isMouseDragging = true;
@@ -150,23 +145,11 @@ function endMouseDrag(){
     isMouseDragging = false;
 }
 
-container.addEventListener('mousedown', () => {
-    pauseProgressBar(true);
-    startMouseDrag();
-});
-container.addEventListener('mousemove', () => {
-    pauseProgressBar(true);
-    moveMouseDrag();
-});
-container.addEventListener('mouseup', () => {
-    pauseProgressBar(false);
-    endMouseDrag();
-});
+container.addEventListener('mousedown', startMouseDrag);
+container.addEventListener('mousemove', moveMouseDrag);
+container.addEventListener('mouseup', endMouseDrag);
 // Добавляем обработчик события mouseleave, чтобы завершить перетаскивание, если курсор покидает область слайдера
-container.addEventListener('mouseleave', () => {
-    pauseProgressBar(false);
-    endMouseDrag();
-});
+container.addEventListener('mouseleave', endMouseDrag);
 
 window.addEventListener('resize', () => {
     const newWidthOfSlide = window.getComputedStyle(container).width;
