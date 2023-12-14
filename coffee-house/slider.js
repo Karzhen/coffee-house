@@ -153,7 +153,8 @@ container.addEventListener('mouseleave', endMouseDrag);
 
 window.addEventListener('resize', () => {
     const newWidthOfSlide = window.getComputedStyle(container).width;
-    widthOfSlideWithoutPx = Number(widthOfSlide.slice(0, -2)) + Number(window.getComputedStyle(coffeeSlider).gap.slice(0, -2));
+    widthOfSlideWithoutPx = Number(newWidthOfSlide.slice(0, -2)) + Number(window.getComputedStyle(coffeeSlider).gap.slice(0, -2));
+    console.log(newWidthOfSlide)
     const newIndex = Math.round(position / widthOfSlideWithoutPx);
     position = newIndex * widthOfSlideWithoutPx;
 
