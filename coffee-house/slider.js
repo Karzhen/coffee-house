@@ -4,13 +4,42 @@ const coffeeSlider = document.querySelector('.coffee__slider'),
       controls = document.querySelectorAll('.control'),
       container = document.querySelector('.container__coffee'),
       widthOfSlide = window.getComputedStyle(container).width;
-let widthOfSlideWithoutPx = Number(widthOfSlide.slice(0, -2)) + 100;
+let widthOfSlideWithoutPx = Number(widthOfSlide.slice(0, -2)) + Number(window.getComputedStyle(coffeeSlider).gap.slice(0, -2));
 let position = 0,
-    controlIndex = 0;
+    controlIndex = 0,
+    current = 0;
 
-//functions
+// Переменные для сенсорных устройств
+let isDragging = false,
+    startX,
+    currentX;
+// Переменные для мыши
+let isMouseDragging = false,
+    startXMouse,
+    currentXMouse;
 
-const nextSlide = () => {
+// coffeeSlider.addEventListener('mouseover', () => pauseProgressBar(true));
+//
+// coffeeSlider.addEventListener('mouseout', () => pauseProgressBar(false));
+
+function pauseProgressBar(isPause = true){
+    const currentControl = document.querySelector('.control__load');
+    if(isPause){
+        currentControl.style.animationPlayState = 'paused';
+    }
+    else{
+        currentControl.style.animationPlayState = 'running';
+    }
+}
+
+// auto slide when animation progress bar is finish
+for (const control of controls) {
+    control.addEventListener('animationend', function() {
+        nextSlide();
+    });
+}
+
+function nextSlide() {
     if (position < (controls.length - 1) * widthOfSlideWithoutPx) {
         position += widthOfSlideWithoutPx;
         controlIndex += 1;
@@ -21,7 +50,7 @@ const nextSlide = () => {
     coffeeSlider.style.left  = -position + 'px';
     currentSlide(controlIndex);
 }
-const prevSlide = () => {
+function prevSlide() {
     if (position > 0) {
         position -= widthOfSlideWithoutPx;
         controlIndex -= 1;
@@ -33,49 +62,44 @@ const prevSlide = () => {
     currentSlide(controlIndex);
 }
 
-const currentSlide = (index) => {
-    for (let control of controls) {
-        control.classList.remove('active-control');
+function currentSlide(index) {
+    if (controls[current].querySelector('.control__load')) {
+        controls[current].querySelector('.control__load').remove();
     }
-    controls[index].classList.add('active-control');
+    current = index;
+
+    const loadDiv = document.createElement('div');
+    loadDiv.className = 'control__load load-animation';
+    controls[current].appendChild(loadDiv);
 }
 
-//event listeners
+// function switchControl() {
+//     const nextIndex = (current + 1) % controls.length;
+//     currentSlide(nextIndex);
+// }
 
 arrowRight.addEventListener('click', nextSlide);
 arrowLeft.addEventListener('click', prevSlide);
-
 controls.forEach((control, index) => {
     control.addEventListener('click', () => {
         position = widthOfSlideWithoutPx * index;
-        console.log(position)
         coffeeSlider.style.left  = -position + 'px';
         currentSlide(index);
     })
 })
 
-let isDragging = false;
-let startX;
-let currentX;
-
 // Функция для начала перетаскивания (для сенсорных устройств)
-const startDrag = (event) => {
+function startDrag(event) {
     isDragging = true;
     startX = event.touches[0].clientX;
     currentX = startX;
-};
+}
 
-// Функция для перемещения при перетаскивании (для сенсорных устройств)
-const moveDrag = (event) => {
+// Функция для перемещения (для сенсорных устройств)
+function moveDrag(event){
     if (!isDragging) return;
-
-    // Получаем текущую позицию касания
     currentX = event.touches[0].clientX;
-
-    // Вычисляем смещение
     const deltaX = currentX - startX;
-
-    // Если смещение достаточно большое, вызываем функцию nextSlide()
     if (deltaX > 20) {
         prevSlide();
         isDragging = false;
@@ -83,25 +107,70 @@ const moveDrag = (event) => {
         nextSlide();
         isDragging = false;
     }
-};
+}
 
 // Функция для завершения перетаскивания (для сенсорных устройств)
-const endDrag = () => {
+function endDrag(){
     isDragging = false;
-};
+}
 
 // Добавляем обработчики событий сенсорных устройств
-container.addEventListener('touchstart', startDrag);
-container.addEventListener('touchmove', moveDrag);
-container.addEventListener('touchend', endDrag);
-// Добавляем обработчик события mouseup
-container.addEventListener('mouseup', endDrag);
+container.addEventListener('touchstart', () => {
+    pauseProgressBar(true);
+    startDrag();
+});
+container.addEventListener('touchmove',  () => {
+    moveDrag();
+});
+container.addEventListener('touchend',  () => {
+    pauseProgressBar(false);
+    endDrag();
+});
+
+function startMouseDrag(event) {
+    isMouseDragging = true;
+    startXMouse = event.clientX;
+    currentXMouse = startXMouse;
+}
+
+function moveMouseDrag(event){
+    if (!isMouseDragging) return;
+    currentXMouse = event.clientX;
+    const deltaX = currentXMouse - startXMouse;
+    if (deltaX > 20) {
+        prevSlide();
+        isMouseDragging = false;
+    } else if (deltaX < -20) {
+        nextSlide();
+        isMouseDragging = false;
+    }
+}
+
+function endMouseDrag(){
+    isMouseDragging = false;
+}
+
+container.addEventListener('mousedown', () => {
+    pauseProgressBar(true);
+    startMouseDrag();
+});
+container.addEventListener('mousemove', () => {
+    pauseProgressBar(true);
+    moveMouseDrag();
+});
+container.addEventListener('mouseup', () => {
+    pauseProgressBar(false);
+    endMouseDrag();
+});
 // Добавляем обработчик события mouseleave, чтобы завершить перетаскивание, если курсор покидает область слайдера
-container.addEventListener('mouseleave', endDrag);
+container.addEventListener('mouseleave', () => {
+    pauseProgressBar(false);
+    endMouseDrag();
+});
 
 window.addEventListener('resize', () => {
     const newWidthOfSlide = window.getComputedStyle(container).width;
-    widthOfSlideWithoutPx = Number(newWidthOfSlide.slice(0, -2)) + 100;
+    widthOfSlideWithoutPx = Number(widthOfSlide.slice(0, -2)) + Number(window.getComputedStyle(coffeeSlider).gap.slice(0, -2));
     const newIndex = Math.round(position / widthOfSlideWithoutPx);
     position = newIndex * widthOfSlideWithoutPx;
 
@@ -109,4 +178,9 @@ window.addEventListener('resize', () => {
 
     const newIndexControl = Math.min(Math.max(newIndex, 0), controls.length - 1);
     currentSlide(newIndexControl);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // setInterval(nextSlide, 5000);
+    currentSlide(0);
 });

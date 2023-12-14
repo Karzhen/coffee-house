@@ -408,7 +408,39 @@ section {
     background-color: var(--border-light);
 }
 
+.control__load {
+    width: 0;
+    height: 100%;
+    background-color: var(--border-dark);
+    animation-play-state: running;
+}
+
+/* Использовать с анимацией 'animation-play-state: running' */
+
+.load-animation {
+    animation: load_slide 5s linear forwards;
+}
+
+@keyframes load_slide {
+    0% {
+        width: 0;
+    }
+
+    15% {
+        width: 20%;
+    }
+
+    85% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
 .active-control {
+    height: 4px;
     background-color: var(--border-dark);
 }
 
