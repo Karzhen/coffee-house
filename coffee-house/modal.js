@@ -3,6 +3,7 @@ const menuItems = document.querySelectorAll('.menu-item');
 const modal = document.getElementById('modal-card');
 
 function openModal(productData, category) {
+    document.body.classList.toggle('no-scroll');
     modal.innerHTML = `
     <div class="modal__container">
     <div class="container-left">
@@ -151,6 +152,7 @@ function openModal(productData, category) {
     });
 
     function closeModal() {
+        document.body.classList.remove('no-scroll');
         modal.style.display = 'none';
         document.removeEventListener('keydown', handleEscape);
     }
